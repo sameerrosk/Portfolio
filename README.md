@@ -1,5 +1,37 @@
 # Sameer Shaik — Product Portfolio
 
-A responsive portfolio of product thinking, enterprise SaaS experience, and applied AI work.
+A responsive, buildless portfolio covering product thinking, enterprise SaaS experience, and applied AI.
 
-Static source lives in `dist/`. Vercel deployment configuration is included.
+## Run locally
+
+Serve the `dist/` directory using a static HTTP server, or open root `index.html` in a browser with `dist/` alongside it.
+
+## Deploy on Vercel
+
+Import this repository and use `main` as the production branch. The included `vercel.json` selects `dist/` as the output directory, with no framework, build command, or install step required.
+
+## Source
+
+- `dist/index.html`: page sections and professional copy.
+- `dist/style.css`: visual system and responsive layouts.
+- `dist/app.js`: projects, case studies, tabs, filters, theme and navigation.
+- `dist/assets/`: artwork and PDF decks.
+- `index.html`: bundled local convenience copy; regenerate after source edits.
+
+## Features
+
+Prototype-inspired CompassLoop and Attune showcases, interactive skills and career sections, case-study dialogs, scoped professional metrics, an illustrated cricket playbook, anime influences, and a contact section. Keyboard navigation, reduced-motion support, mobile quick navigation, and light/dark themes are included.
+
+## Content and evidence
+
+Professional metrics were supplied by Sameer: 14,000+ customer interactions across Tekion and Citrix; 97% CSAT across 2,500+ responses; 150+ internal-agent users; eight internal agents built at Tekion, including an agent supporting leadership workflows. Concept UI uses labelled demo data. Research findings and proposed targets are distinguished from launched-product outcomes.
+
+Cricket artwork was adapted from Sameer’s supplied image references using the built-in image generation tool. Source links and quote citations appear on the site. Anime artwork is original fan illustration; captions are personal interpretations.
+
+## Verification
+
+JavaScript syntax, HTML identifiers, local assets and links checked. Browser layout checks passed at 320, 390, 768, 1024 and 1440 CSS pixels with no horizontal page overflow. Tabs, filters, keyboard navigation, and case-study dialogs were exercised. The revised contact section was visually checked on mobile.
+
+## Case-study documents
+
+PDF decks open from the existing public portfolio storage at https://sameer-shaik-product-studio.poeticwand3.chatgpt.site/assets/. They are external document dependencies; the repository versions the site source and artwork. The downloadable project backup includes the PDF originals.
