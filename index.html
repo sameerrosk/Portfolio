@@ -55,10 +55,119 @@ dialog{border-radius:18px;background:var(--paper);border-color:var(--line);box-s
 /* Readable sentence-case location and product-team introduction. */
 .hero-location{font-size:10px;font-weight:500;letter-spacing:.35px;line-height:1.8;align-items:baseline;gap:9px}.hero-location .status-dot{align-self:center}.hero-location>span:last-child{min-width:0}
 
+</style><style>
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Manrope:wght@400;500;600;700&display=swap");
+/* Sameer's world: an illustrated opening and a purposeful motion system. */
+:root{--world-blue:#4b80ff;--world-coral:#ff9d84;--motion-ease:cubic-bezier(.2,.75,.2,1)}
+.world-intro{position:relative;isolation:isolate;overflow:hidden;background:#09121e;color:#f1f3ed;min-height:100svh;padding:20px clamp(22px,4vw,68px) 20px;font-family:var(--sans)}
+.world-grid{position:absolute;inset:0;z-index:-2;background:radial-gradient(ellipse at 52% 40%,#2257b635,transparent 54%),radial-gradient(ellipse at 0% 100%,#72b0b510,transparent 50%)}
+.world-grid:after{content:'';position:absolute;inset:0;background-image:radial-gradient(#a2b8ce38 .6px,transparent .8px);background-size:27px 27px;mask-image:linear-gradient(transparent,#000 20%,#000 80%,transparent)}
+.world-topbar{max-width:1440px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;position:relative;z-index:8}
+.world-signature{display:flex;align-items:center;gap:15px}.world-signature>span{font-family:var(--serif);font-size:49px;line-height:1;color:#d2f873}.world-signature small{font-size:7px;letter-spacing:1.3px;line-height:1.8;color:#acbbc5}
+.world-top-actions{display:flex;align-items:center;gap:24px}.world-motion{background:transparent;padding:8px;color:#9aafb9;font-size:11px}.world-motion>span{margin-left:7px;font-size:9px}.world-skip{font-size:11px;display:flex;align-items:center;gap:25px;border-bottom:1px solid #536773;padding:8px 0}.world-skip:hover{color:#d2f873}
+.world-stage{max-width:1400px;height:clamp(420px,58vh,640px);min-height:420px;position:relative;margin:auto;--wx:0;--wy:0}
+.world-title-wrap{text-align:center;position:absolute;top:21px;left:0;right:0;z-index:1;pointer-events:none}.world-kicker{font-size:10px;letter-spacing:5px;color:#a9c4d9;font-weight:500}
+#world-title{font-family:var(--display);font-size:clamp(105px,15.5vw,224px);letter-spacing:-.085em;line-height:1;margin:11px 0 0;font-weight:600;color:#eff1e9}
+#world-title>span{display:inline-flex;overflow:hidden;padding:0 .06em .09em 0}#world-title i{font-style:normal;display:block;animation:worldLetter 1s var(--motion-ease) both}#world-title i:nth-child(2){animation-delay:.06s}#world-title i:nth-child(3){animation-delay:.12s}#world-title i:nth-child(4){animation-delay:.18s}#world-title i:nth-child(5){animation-delay:.24s}#world-title i:nth-child(6){animation-delay:.3s}#world-title b{color:#d2f873;font-weight:500;animation:worldLetter 1s .36s var(--motion-ease) both}
+.world-orbits{position:absolute;top:48%;left:52%;width:470px;height:330px;transform:translate(-50%,-50%);z-index:0;pointer-events:none}.world-orbits>div{position:absolute;inset:0;border:1px solid #588dd02b;border-radius:50%;transform:rotate(-24deg)}.world-orbits>div:nth-child(2){inset:25px -30px;transform:rotate(32deg);border-color:#b8d3e31f}.world-orbits>div:nth-child(3){inset:-50px 70px;transform:rotate(20deg);border-style:dashed}.world-orbit-dot{position:absolute;top:12%;right:3%;width:8px;height:8px;border-radius:50%;background:#7eacff;box-shadow:0 0 24px #3272fc;animation:dotBreathe 4s ease-in-out infinite}
+.world-person{position:absolute;left:52%;bottom:12px;transform:translateX(calc(-50% + var(--wx)*8px)) translateY(calc(var(--wy)*4px));width:340px;height:calc(100% - 70px);max-height:540px;margin:0;z-index:3;transition:transform .5s var(--motion-ease)}
+.world-portrait{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 20px 35px #0007);transition:opacity .6s var(--motion-ease),transform .8s var(--motion-ease)}
+.world-portrait-work{animation:portraitArrive 1.1s .25s var(--motion-ease) both}.world-portrait-gym{opacity:0;transform:translateY(16px) scale(.97)}.world-stage.is-gym .world-portrait-work{opacity:0;transform:translateY(15px) scale(.97);animation:none}.world-stage.is-gym .world-portrait-gym{opacity:1;transform:none}
+.world-person figcaption{position:absolute;bottom:-1px;left:50%;transform:translateX(-50%) rotate(-3deg);white-space:nowrap;border:1px solid #526c71;background:#14242aeb;backdrop-filter:blur(10px);padding:9px 14px;border-radius:5px;font-size:6px;letter-spacing:1.3px;color:#d7e9dd;display:flex;gap:7px;align-items:center}.world-label-dot{width:4px;height:4px;background:#d2f873;border-radius:50%}
+.world-side-copy{position:absolute;left:3%;top:52%;transform:translateY(-30%);z-index:4}.world-micro{font-size:6px;letter-spacing:1.4px;color:#7197ab}.world-side-copy>p{font-family:var(--display);font-weight:400;font-size:clamp(25px,2.6vw,39px);letter-spacing:-1.8px;line-height:1.16;margin-top:16px}.world-side-copy em{color:#d2f873;font-size:1.18em}.world-side-copy>svg{width:94px;height:55px;position:absolute;right:-87px;bottom:-12px;color:#b4d8cc;transform:rotate(-9deg)}
+.world-postcard{position:absolute;right:4%;top:46%;transform:translate(calc(var(--wx)*-6px),calc(var(--wy)*-4px)) rotate(7deg);z-index:4;width:205px;padding:19px 20px 22px;color:#34251f;background:#f3bdac;box-shadow:7px 9px 0 #ff9d8420;animation:noteArrive 1s .55s var(--motion-ease) both;transition:transform .6s var(--motion-ease)}.world-postcard>span{font-size:6px;letter-spacing:1.6px}.world-postcard strong{font-family:var(--serif);font-size:33px;line-height:1.05;font-weight:400;display:block;margin-top:15px}.world-postcard small{display:block;font-size:7px;margin-top:14px}.world-postcard i{position:absolute;right:13px;top:22px;font-size:29px;font-style:normal;color:#a54e38}
+.world-seal{position:absolute;right:22%;top:21%;z-index:4;width:91px;height:91px;display:flex;flex-direction:column;align-items:center;justify-content:center;border:1px solid #5994ff;color:#9dbdff;background:#122b4cd9;transform:rotate(13deg);border-radius:50%;box-shadow:0 0 0 5px #5994ff0c}.world-seal>span{font-size:6px;letter-spacing:1.4px}.world-seal>b{font-family:var(--display);font-size:18px;line-height:1.1;font-weight:500;margin:5px 0}.world-seal>span:last-child{font-size:4px;letter-spacing:.5px}
+.world-coordinate{position:absolute;left:3%;bottom:17px;font-size:6px;line-height:1.8;letter-spacing:1px;color:#627f94}.world-spark{position:absolute;z-index:2;font-weight:300}.world-spark-one{left:29%;top:30%;color:#d2f873;font-size:38px;animation:worldSpin 28s linear infinite}.world-spark-two{right:7%;bottom:12%;font-family:var(--serif);font-size:57px;color:#658dcb;transform:rotate(-13deg)}
+.world-bottom{max-width:1280px;margin:auto;position:relative;z-index:6}.world-traits{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #3e566350;border-bottom:1px solid #3e566350;gap:0}.world-traits>button{padding:15px 20px;background:transparent;text-align:left;position:relative;border-right:1px solid #3e566350;transition:background .3s,color .3s}.world-traits>button:first-child{padding-left:0}.world-traits>button:last-child{border-right:0}.world-traits>button:after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;transform:scaleX(0);transform-origin:left;background:#d2f873;transition:transform .35s var(--motion-ease)}.world-traits>button:hover,.world-traits>button[aria-pressed=true]{background:#27424b33}.world-traits>button[aria-pressed=true]:after{transform:scaleX(1)}.world-traits>button[aria-pressed=true] .world-trait-name{color:#d2f873}.world-trait-num{font-size:5px;letter-spacing:1.2px;color:#7690a1;display:block}.world-trait-name{font-family:var(--display);font-size:20px;line-height:1.3;letter-spacing:-.5px;display:flex;gap:12px;align-items:center;margin-top:8px;color:#e4eae7}.world-trait-name svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}.world-trait-small{font-size:5px;letter-spacing:1px;color:#8ba5b2;display:flex;justify-content:space-between;gap:15px;margin-top:10px}.world-trait-small i{font-size:13px;font-style:normal;line-height:.6;color:#91b8c7}
+.world-story{display:flex;align-items:center;gap:24px;padding-top:17px;min-height:53px}.world-story>span{font-size:5px;letter-spacing:1.2px;color:#74a4b6;max-width:135px;flex:0 0 135px;line-height:1.9}.world-story>p{font-size:11px;line-height:1.7;color:#b8c9cf;max-width:700px}.world-story.is-changing>p{animation:storyIn .4s var(--motion-ease)}
+.world-enter{display:flex;align-items:center;gap:40px;padding-top:21px}.world-enter>p{font-size:10px;color:#7f9da9;line-height:1.7}.world-enter>p>strong{font-family:var(--display);color:#dfe9e7;font-size:16px;font-weight:400;letter-spacing:-.4px}.world-enter-button{margin-left:auto;display:flex;align-items:center;justify-content:space-between;gap:55px;padding:15px 18px 15px 27px;border-radius:50px;background:#d2f873;color:#142619;font-family:var(--display);font-size:19px;font-weight:500;min-width:210px;transition:background .3s,transform .3s,box-shadow .3s}.world-enter-button>span{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#192a20;color:#d2f873;font-size:22px;line-height:1;transition:transform .4s var(--motion-ease)}.world-enter-button:hover{background:#e3ffac;box-shadow:0 0 35px #b5ee4e24;transform:translateY(-3px)}.world-enter-button:hover>span{transform:rotate(45deg)}.world-entry-note{font-size:5px;line-height:1.9;letter-spacing:1.3px;color:#7896a5}
+.world-intro[hidden]{display:none!important}body.welcome-active>.header,body.welcome-active>#main,body.welcome-active>footer,body.welcome-active>.mobile-dock,body.welcome-active>.motion-switch{display:none!important}.world-leaving .world-intro{pointer-events:none;animation:worldExit .5s var(--motion-ease) forwards}
+.chapter-wipe{position:fixed;inset:0;background:#d2f873;color:#132218;display:grid;place-items:center;z-index:90;transform:translateY(105%);visibility:hidden;pointer-events:none}.chapter-wipe>span{font-size:9px;letter-spacing:2px}.chapter-wipe b{display:block;font-family:var(--display);font-weight:500;font-size:clamp(32px,5vw,70px);letter-spacing:-2px;margin-top:12px}.world-leaving .chapter-wipe{visibility:visible;animation:chapterWipe .8s var(--motion-ease) both}
+.motion-switch{position:fixed;bottom:17px;left:17px;z-index:38;background:#12212ce8;border:1px solid #52717b66;border-radius:30px;backdrop-filter:blur(8px);color:#abc1c6;padding:8px 12px;display:flex;align-items:center;gap:7px;font-size:9px;box-shadow:0 4px 20px #0003}.motion-switch:hover{color:#d2f873;border-color:#a2c464}.motion-switch-icon{font-size:11px}.world-replay{font-size:9px;color:var(--cyan,var(--accent));background:transparent;border-bottom:1px solid var(--line);padding:5px 0}.hero-footnote{flex-wrap:wrap}.hero-footnote .world-replay{flex-basis:auto}
+.motion-ready .motion-reveal{opacity:0;transform:translate3d(0,25px,0);transition:opacity .8s var(--motion-ease),transform .8s var(--motion-ease);transition-delay:var(--reveal-delay,0ms)}.motion-ready .motion-reveal.is-visible{opacity:1;transform:translateZ(0)}.portfolio-entering .hero-copy>*{animation:portfolioArrive .85s var(--motion-ease) both}.portfolio-entering .hero-copy>*:nth-child(2){animation-delay:.08s}.portfolio-entering .hero-copy>*:nth-child(3){animation-delay:.16s}.portfolio-entering .hero-copy>*:nth-child(4){animation-delay:.24s}.portfolio-entering .hero-copy>*:nth-child(5){animation-delay:.32s}
+.featured .project-visual{perspective:1000px;transition:background .6s,box-shadow .6s}.compass-studio{transition:transform .9s var(--motion-ease),box-shadow .9s var(--motion-ease)}.compass-project:hover .compass-studio{transform:perspective(1000px) rotateY(-1deg) rotateZ(-1deg) translateY(-8px);box-shadow:0 35px 55px #160f1166}.attune-dashboard{animation:dashboardFloat 7s ease-in-out infinite}.attention-heatmap i:nth-child(9n+2){animation:heatGlow 5s ease-in-out infinite alternate}.attention-heatmap i:nth-child(13n+1){animation:heatGlow 5s 2s ease-in-out infinite alternate}.orbit-three{animation:compassOrbit 45s linear infinite}.center-compass svg{overflow:visible}.spark-one{animation:worldSpin 26s linear infinite}.lab-card .lab-glyph{transition:transform .55s var(--motion-ease)}.lab-card:hover .lab-glyph{transform:rotate(-7deg) scale(1.1)}.lab-card{position:relative;transform-style:preserve-3d;transition:transform .4s var(--motion-ease),box-shadow .4s,border-color .4s}.lab-card:hover{border-color:#7bba91;box-shadow:0 15px 35px #0002}.header nav a.is-current{color:var(--accent)}.mobile-dock a.is-current:not(:last-child){color:#d2f873}.section-head h2 em{display:inline-block}.rohit-photo img,.kohli-photo img,.team-photo img{transition:transform 1s var(--motion-ease)}.rohit-photo:hover img,.kohli-photo:hover img,.team-photo:hover img{transform:scale(1.035)}
+.motion-paused .world-stage *,.motion-paused .world-title-wrap *,.motion-paused .attune-dashboard,.motion-paused .attention-heatmap i,.motion-paused .orbit-three,.motion-paused .spark-one{animation:none!important}.motion-paused .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}.motion-paused .world-portrait-work{transform:none;opacity:1}.motion-paused .world-stage.is-gym .world-portrait-work{opacity:0}.motion-paused .world-stage.is-gym .world-portrait-gym{transform:none;opacity:1}
+@keyframes worldLetter{from{transform:translateY(110%);opacity:0}to{transform:translateY(0);opacity:1}}
+@keyframes portraitArrive{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes noteArrive{from{opacity:0;translate:0 15px}to{opacity:1;translate:0 0}}
+@keyframes worldSpin{to{rotate:360deg}}
+@keyframes dotBreathe{50%{opacity:.4;box-shadow:0 0 7px #3272fc}}
+@keyframes storyIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes worldExit{to{opacity:0;transform:translateY(-30px)}}
+@keyframes chapterWipe{0%{transform:translateY(105%)}42%,68%{transform:translateY(0)}100%{transform:translateY(-105%)}}
+@keyframes portfolioArrive{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes dashboardFloat{0%,100%{transform:translateY(0) rotate(5deg)}50%{transform:translateY(-8px) rotate(3deg)}}
+@keyframes heatGlow{to{filter:brightness(1.7)}}
+@keyframes compassOrbit{to{transform:translate(-50%,-50%) rotate(360deg)}}
+@media(min-width:1500px){.world-person{width:385px}.world-postcard{right:7%;width:224px}.world-stage{height:590px}.world-intro{padding-top:30px;padding-bottom:35px}.world-bottom{max-width:1340px}.world-traits>button{padding-top:20px;padding-bottom:20px}.world-trait-name{font-size:25px}.world-trait-num,.world-trait-small{font-size:6px}.world-enter{padding-top:28px}.world-story>p{font-size:13px}.world-story>span{font-size:6px}}
+@media(max-width:1050px){.world-stage{height:470px}.world-side-copy{left:0}.world-side-copy>p{font-size:29px}.world-side-copy>svg{right:-58px;width:65px}.world-person{width:300px;left:52%}.world-postcard{width:170px;right:1%;top:49%;padding:16px}.world-postcard strong{font-size:28px}.world-postcard i{font-size:22px;right:10px}.world-postcard>span{font-size:5px}.world-seal{right:18%;top:25%;width:74px;height:74px}.world-seal>b{font-size:15px}.world-seal>span{font-size:5px}.world-coordinate{left:0}.world-trait-name{font-size:18px;gap:9px}.world-traits>button{padding-inline:15px}.world-entry-note{display:none}}
+@media(max-width:760px){.world-intro{padding:20px 23px 25px}.world-topbar{gap:15px}.world-signature>span{font-size:39px}.world-signature{gap:10px}.world-signature small{font-size:5px;letter-spacing:.7px}.world-top-actions{gap:15px}.world-motion>span{display:none}.world-motion{padding:8px;font-size:12px}.world-skip{font-size:10px;gap:12px}.world-stage{height:470px;min-height:470px}.world-title-wrap{top:25px}.world-kicker{font-size:7px;letter-spacing:2.5px}#world-title{font-size:clamp(82px,17vw,125px);letter-spacing:-.085em;margin-top:12px}.world-person{left:51%;bottom:8px;height:365px;width:270px}.world-orbits{width:360px;height:260px;left:50%;top:54%}.world-side-copy{left:0;top:auto;bottom:52px;transform:none}.world-side-copy>p{font-size:23px;letter-spacing:-1px}.world-micro{font-size:4px;letter-spacing:.5px}.world-side-copy>svg{display:none}.world-postcard{width:142px;right:0;top:43%;padding:14px;transform:rotate(8deg)}.world-postcard strong{font-size:24px;margin-top:9px}.world-postcard small{font-size:5px;margin-top:9px}.world-postcard>span{font-size:4px;letter-spacing:.7px}.world-postcard i{font-size:17px;right:9px;top:18px}.world-seal{right:2%;top:26%;width:63px;height:63px}.world-seal>b{font-size:13px;margin:4px 0}.world-seal>span{font-size:4px}.world-seal>span:last-child{font-size:3px}.world-coordinate{display:none}.world-spark-one{left:4%;top:34%;font-size:26px}.world-spark-two{right:9%;bottom:13%;font-size:37px}.world-person figcaption{font-size:4px;padding:8px 11px;letter-spacing:.8px;bottom:-5px}.world-traits{grid-template-columns:1fr 1fr}.world-traits>button,.world-traits>button:first-child{padding:15px}.world-traits>button:nth-child(2){border-right:0}.world-traits>button:nth-child(-n+2){border-bottom:1px solid #3e566350}.world-trait-num{font-size:5px}.world-trait-name{font-size:19px;margin-top:7px;gap:10px}.world-trait-small{font-size:5px;margin-top:9px}.world-trait-name svg{width:21px;height:21px}.world-story{display:block;padding-top:17px;min-height:82px}.world-story>span{font-size:5px;max-width:none}.world-story>p{font-size:11px;margin-top:5px;line-height:1.75}.world-enter{padding-top:16px;gap:18px;justify-content:space-between}.world-enter>p{font-size:9px;max-width:190px}.world-enter>p>strong{font-size:13px;line-height:1.4;display:block;margin-top:3px}.world-enter-button{min-width:150px;padding:12px 13px 12px 20px;gap:25px;font-size:18px}.world-enter-button>span{width:28px;height:28px;font-size:20px}.motion-switch{bottom:75px;left:15px;padding:7px 10px;font-size:8px}.motion-switch-icon{font-size:10px}.hero-footnote .world-replay{font-size:10px}.chapter-wipe>span{padding:25px}}
+@media(max-width:450px){.world-intro{padding-inline:20px}.world-stage{height:410px;min-height:410px}.world-title-wrap{top:25px}#world-title{font-size:clamp(74px,19vw,90px)}.world-kicker{font-size:6px;letter-spacing:2px}.world-person{height:302px;width:220px;left:51%;bottom:7px}.world-postcard{width:112px;top:44%;padding:11px;right:-4px}.world-postcard strong{font-size:21px;margin-top:10px}.world-postcard>span{font-size:3px;letter-spacing:.7px}.world-postcard small{font-size:4px;line-height:1.6;max-width:80px}.world-postcard i{font-size:14px;top:18px;right:5px}.world-side-copy{bottom:43px;left:0}.world-side-copy>p{font-size:19px;letter-spacing:-.9px}.world-micro{display:none}.world-seal{width:55px;height:55px;top:27%;right:4%}.world-seal>b{font-size:11px}.world-seal>span{font-size:3px}.world-seal>span:last-child{font-size:2.5px}.world-spark-one{left:3%;top:36%;font-size:22px}.world-spark-two{right:3%;bottom:11%;font-size:30px}.world-orbits{width:285px;height:205px;top:56%}.world-trait-name{font-size:17px;gap:8px}.world-traits>button,.world-traits>button:first-child{padding:13px 12px}.world-trait-num{font-size:4px;letter-spacing:.9px}.world-trait-small{font-size:4px;letter-spacing:.7px}.world-trait-name svg{width:18px;height:18px}.world-story{min-height:86px}.world-story>p{font-size:10px}.world-enter{gap:14px;padding-top:13px}.world-enter>p{font-size:8px;max-width:170px}.world-enter>p>strong{font-size:12px}.world-enter-button{font-size:17px;min-width:137px;padding:11px 12px 11px 19px;gap:20px}.world-enter-button>span{width:24px;height:24px;font-size:18px}.world-skip{font-size:8px;gap:8px}.world-top-actions{gap:8px}.world-signature small{font-size:4px}.world-signature>span{font-size:36px}}
+@media(max-width:350px){.world-intro{padding-inline:15px}.world-stage{height:385px;min-height:385px}.world-person{height:285px;width:205px}.world-postcard{width:98px;right:-2px;top:47%}.world-postcard strong{font-size:19px}.world-postcard small{display:none}.world-side-copy>p{font-size:17px}.world-enter-button{min-width:124px;font-size:15px;gap:14px}.world-enter>p>strong{font-size:11px}.world-seal{right:0}.world-skip{font-size:7px}.world-signature small{font-size:3.5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.world-intro *,.chapter-wipe,.portfolio-entering .hero-copy>*,.attune-dashboard,.attention-heatmap i,.orbit-three,.spark-one{animation:none!important;transition:none!important}.motion-ready .motion-reveal{opacity:1!important;transform:none!important;transition:none!important}.world-portrait-work{opacity:1;transform:none}.world-portrait-gym{opacity:0}.world-stage.is-gym .world-portrait-work{opacity:0}.world-stage.is-gym .world-portrait-gym{opacity:1;transform:none}.world-leaving .chapter-wipe{visibility:hidden}.world-person{transform:translateX(-50%)}.lab-card:hover,.rohit-photo:hover img,.kohli-photo:hover img,.team-photo:hover img,.world-enter-button:hover{transform:none}}
+@media print{.world-intro,.chapter-wipe,.motion-switch,.world-replay{display:none!important}body.welcome-active>.header,body.welcome-active>#main,body.welcome-active>footer{display:block!important}.motion-reveal{opacity:1!important;transform:none!important}}
+
+/* A warm personal studio: paper, sage, ink and a little terracotta. */
+.world-intro{background:#f6f2e9;color:#283c35;font-family:'Manrope',var(--sans)}
+.world-grid{background:radial-gradient(ellipse at 18% 12%,#efcab856,transparent 46%),radial-gradient(ellipse at 81% 47%,#c2d5bf7a,transparent 53%),linear-gradient(135deg,#faf6ee,#f0eee3 72%,#eee6d9)}
+.world-grid:after{background-image:radial-gradient(#7d897735 .55px,transparent .7px);background-size:9px 9px;opacity:.25;mask-image:linear-gradient(transparent,#000 30%,#000 80%,transparent)}
+.world-stage:before{content:'';position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:43%;height:71%;border-radius:200px 200px 13px 13px;background:linear-gradient(140deg,#cbd6c2a6,#e3e4cf70 65%,#ebd4be66);border:1px solid #7c8f7330;box-shadow:inset 0 0 55px #fff5;z-index:0}
+.world-stage:after{content:'';position:absolute;width:80px;height:80px;border-radius:50%;left:14%;top:28%;background:linear-gradient(130deg,#dfa47d70,#e8bd9640);box-shadow:0 0 0 10px #e8bd9610;z-index:0}
+.world-signature>span{color:#315646}.world-signature small{color:#677567;font-size:7px}.world-motion{color:#596c60}.world-skip{color:#354d40;border-color:#a0ac99}.world-skip:hover{color:#9b513b}
+.world-kicker{font-family:'Manrope',var(--sans);color:#73806e;font-size:9px;letter-spacing:3.6px}
+#world-title{font-family:var(--serif);font-weight:400;color:#293d35;letter-spacing:-.035em;line-height:.98;font-size:clamp(126px,18vw,252px);margin-top:5px}
+#world-title b{color:#b87354;font-weight:400}.world-orbits{opacity:.65}.world-orbits>div{border-color:#8896753d}.world-orbits>div:nth-child(2){border-color:#b5806140}.world-orbit-dot{background:#bc7e5c;box-shadow:0 0 18px #bc7e5c22}
+.world-micro{color:#7c8678;letter-spacing:1px}.world-side-copy>p{font-family:'Manrope',var(--sans);font-weight:500;letter-spacing:-1.5px;color:#344b3d}.world-side-copy em{font-family:var(--serif);color:#9a5b40;font-weight:400}.world-side-copy>svg{color:#8b9a77}
+.world-postcard{background:#ead0bb;color:#463b2d;border:1px solid #bfa08442;box-shadow:6px 8px 0 #c1ac8d18,0 16px 30px #7865480a}.world-postcard>span{color:#8a715c}.world-postcard strong{color:#4d4633}.world-postcard small{color:#7b6b57}.world-postcard i{color:#b87354}
+.world-seal{border-color:#8b9f7c;background:#edf0df;color:#526a46;box-shadow:0 0 0 5px #9aab820a}.world-coordinate{color:#8b927e}.world-spark-one{color:#ad7957}.world-spark-two{color:#8b9a77}
+.world-person figcaption{background:#344f40f2;color:#f6f2e6;border-color:#7c8e6f;box-shadow:0 6px 15px #344f4012}.world-label-dot{background:#d8ba88}.world-portrait{filter:drop-shadow(0 12px 22px #37442d22)}
+.world-traits{border-color:#9ba68c55}.world-traits>button{font-family:'Manrope',var(--sans);border-color:#9ba68c55}.world-traits>button:after{background:#a26a49}.world-traits>button:hover,.world-traits>button[aria-pressed=true]{background:#88987510}.world-traits>button[aria-pressed=true] .world-trait-name{color:#8e573d}.world-trait-num{color:#7d8a75}.world-trait-name{font-family:'Manrope',var(--sans);font-weight:500;color:#3d5142;letter-spacing:-.75px}.world-trait-small{color:#7d8a75}.world-trait-small i{color:#94694d}
+.world-story>span{color:#7b8a71}.world-story>p{color:#63735e}.world-enter>p{color:#86917d}.world-enter>p>strong{font-family:'Manrope',var(--sans);color:#3b5141;font-weight:600;letter-spacing:-.5px}.world-enter-button{font-family:'Manrope',var(--sans);background:#385845;color:#fff9eb}.world-enter-button>span{background:#f2e6cb;color:#385845}.world-enter-button:hover{background:#294535;box-shadow:0 9px 25px #38584520}.world-entry-note{color:#8a957f}
+.chapter-wipe{background:#385845;color:#f6efdc}.chapter-wipe b{font-family:var(--serif);font-weight:400}
+.world-intro :is(a,button):focus-visible{outline:3px solid #936044;outline-offset:5px}
+.world-stage[data-portrait] .world-portrait{opacity:0;transform:translateY(12px) scale(.98);animation:none}
+.world-stage[data-portrait=work] .world-portrait-work,.world-stage[data-portrait=showup] .world-portrait-showup,.world-stage[data-portrait=gym] .world-portrait-gym,.world-stage[data-portrait=grit] .world-portrait-grit{opacity:1;transform:none}
+.world-stage[data-portrait=work] .world-portrait-work{animation:portraitArrive 1.1s .25s var(--motion-ease) both}
+@media(max-width:760px){.world-traits>button:nth-child(-n+2){border-color:#9ba68c55}.world-kicker{font-size:7px;letter-spacing:2.1px}.world-signature small{font-size:5px}.world-side-copy>p{letter-spacing:-1px}#world-title{font-size:clamp(105px,21vw,166px)}.world-stage:before{width:58%;height:72%;bottom:8px}.world-stage:after{width:45px;height:45px;left:5%;top:32%}}
+@media(max-width:450px){#world-title{font-size:clamp(90px,24vw,116px)}.world-kicker{font-size:6px;letter-spacing:1.8px}.world-signature small{font-size:4px}.world-side-copy{background:#faf5e9f2;border:1px solid #b5ab8c30;padding:9px 10px;border-radius:2px 12px 12px 2px;box-shadow:0 5px 18px #756b4710;transform:rotate(-3deg);left:-4px;bottom:40px}.world-side-copy>p{letter-spacing:-.6px;font-size:16px;margin:0}.world-stage:before{width:66%;height:71%}.world-stage:after{width:32px;height:32px;left:3%;top:31%}}
+
+@media(min-width:761px) and (max-height:800px){.world-traits>button{padding-top:12px;padding-bottom:12px}.world-story{min-height:42px;padding-top:12px}.world-enter{padding-top:17px}}
+
 </style></head>
-<body><a class="skip" href="#main">Skip to content</a><div class="scroll-progress" aria-hidden="true"></div>
+<body><a class="skip" href="#main">Skip to content</a><div class="scroll-progress" aria-hidden="true"></div><section class="world-intro" id="welcome" aria-labelledby="world-title">
+  <div class="world-grid" aria-hidden="true"></div>
+  <div class="world-topbar">
+    <a class="world-signature" href="#welcome" aria-label="Sameer Shaik's world"><span>s.</span><small>SAMEER SHAIK<br>THE HUMAN BEHIND THE WORK</small></a>
+    <div class="world-top-actions"><button class="world-motion" data-toggle-motion aria-pressed="false">Ⅱ <span>Pause motion</span></button><a class="world-skip" href="#work" data-enter-world="work">Skip to work <span>↗</span></a></div>
+  </div>
+  <div class="world-stage" data-world-scene data-portrait="work">
+    <div class="world-title-wrap"><p class="world-kicker">WELCOME TO THE WORLD OF</p><h1 id="world-title" aria-label="Welcome to the world of Sameer"><span aria-hidden="true"><i>S</i><i>a</i><i>m</i><i>e</i><i>e</i><i>r</i><b>.</b></span></h1></div>
+    <div class="world-orbits" aria-hidden="true"><div></div><div></div><div></div><span class="world-orbit-dot"></span></div>
+    <div class="world-side-copy"><span class="world-micro">OFF THE CLOCK. STILL ALL IN.</span><p>A little gym.<br>A lot of game.<br><em>All heart.</em></p><svg viewBox="0 0 120 65" aria-hidden="true"><path d="M5 10q62-14 96 33m-26-5 27 7-7-26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+    <figure class="world-person"><img class="world-portrait world-portrait-work" src="dist/assets/sameer-world.webp" width="1024" height="1365" fetchpriority="high" decoding="async" alt="Illustrated portrait of Sameer in his blue blazer"><img class="world-portrait world-portrait-gym" aria-hidden="true" src="dist/assets/sameer-gym.webp" width="941" height="1672" loading="lazy" decoding="async" alt="Illustrated Sameer in his red gym shirt with a natural athletic build"><img class="world-portrait world-portrait-showup" aria-hidden="true" src="dist/assets/sameer-showup.webp" width="941" height="1672" loading="lazy" decoding="async" alt="Sameer in his maroon gym shirt"><img class="world-portrait world-portrait-grit" aria-hidden="true" src="dist/assets/sameer-grit.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Illustrated Sameer in his black three-piece suit and sunglasses"><figcaption><span class="world-label-dot"></span> A WORK IN PROGRESS. ALWAYS.</figcaption></figure>
+    <div class="world-postcard"><span>MY DEFAULT SETTING</span><strong>Lift. Laugh.<br>Learn. Repeat.</strong><small>And then do it a little better.</small><i aria-hidden="true">✳</i></div>
+    <div class="world-seal" aria-hidden="true"><span>NEVER</span><b>GIVE UP</b><span>THAT’S THE ATTITUDE ↗</span></div>
+    <span class="world-coordinate" aria-hidden="true">BENGALURU, INDIA<br>12.97° N / 77.59° E</span>
+    <span class="world-spark world-spark-one" aria-hidden="true">✳</span><span class="world-spark world-spark-two" aria-hidden="true">+</span>
+  </div>
+  <div class="world-bottom">
+    <div class="world-traits" role="group" aria-label="Explore the person behind the work">
+      <button data-world-trait="gym" aria-pressed="false"><span class="world-trait-num">01 / THE REP</span><span class="world-trait-name"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="M9 15h12M5 10v10m4-13v16m12-16v16m4-13v10"/></svg>Show up.</span><span class="world-trait-small">GYM & DISCIPLINE <i>↗</i></span></button>
+      <button data-world-trait="sports" aria-pressed="false"><span class="world-trait-num">02 / THE GAME</span><span class="world-trait-name"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="10"/><path d="M9 7q-2 11 12 16M7 10q11-2 16 11"/></svg>Play all in.</span><span class="world-trait-small">SPORTS & SPIRIT <i>↗</i></span></button>
+      <button data-world-trait="fun" aria-pressed="false"><span class="world-trait-num">03 / THE JOY</span><span class="world-trait-name"><svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="10"/><path d="M10 18q5 6 10 0m-10-7h.1M20 11h.1"/></svg>Laugh often.</span><span class="world-trait-small">FUN & GOOD COMPANY <i>↗</i></span></button>
+      <button data-world-trait="grit" aria-pressed="false"><span class="world-trait-num">04 / THE MINDSET</span><span class="world-trait-name"><svg viewBox="0 0 30 30" aria-hidden="true"><path d="m5 22 8-8 5 4 7-12M18 6h7v7"/></svg>Go again.</span><span class="world-trait-small">DEDICATION & GRIT <i>↗</i></span></button>
+    </div>
+    <div class="world-story" aria-live="polite" aria-atomic="true"><span id="world-story-label">THE PERSON, BEFORE THE PORTFOLIO</span><p id="world-story-copy">Gym. Sports. Fun. Laughter. And an unreasonable willingness to keep trying.</p></div>
+    <div class="world-enter"><p>Now you know a little about me.<br><strong>Want to know about my work?</strong></p><a class="world-enter-button" href="#portfolio" data-enter-world="portfolio">Let’s go <span>↗</span></a><span class="world-entry-note">CUSTOMER SIGNALS.<br>PRODUCT QUESTIONS.<br>THINGS I’VE BUILT.</span></div>
+  </div>
+</section>
+<div class="chapter-wipe" aria-hidden="true"><span>THE NEXT CHAPTER <b>Let’s talk product.</b></span></div>
+<button class="motion-switch" data-toggle-motion aria-pressed="false" aria-label="Pause decorative motion"><span class="motion-switch-icon">Ⅱ</span><span class="motion-switch-label">Motion on</span></button>
+
+
+
 <header class="header"><a class="brand" href="#" aria-label="Sameer Shaik home"><span class="monogram">s<span>.</span></span><span>sameer shaik<span class="brand-sub">PRODUCT THINKING. HUMAN FIRST.</span></span></a><nav aria-label="Main navigation"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#lab" class="nav-playground">Playground</a><a href="#contact" class="nav-contact">Let’s talk <span>↗</span></a></nav><button class="theme-btn" aria-label="Switch to light theme" title="Switch theme">◐</button></header>
-<main id="main"><section class="hero wrap"><div class="hero-copy"><div class="eyebrow hero-location"><span class="status-dot"></span><span>Bengaluru, India: The missing piece in your product team.</span></div><h1>Good products.<br>Better questions.<br><em>Human outcomes.</em></h1><p class="intro">I’m Sameer. I turn customer friction into product questions. I explore answers through research, prototypes, and applied AI.</p><a class="fellow-recognition" href="https://nextleap.app/portfolio/sameer-_shaik" target="_blank" rel="noopener noreferrer"><img src="dist/assets/nextleap-top-fellow.svg" width="52" height="52" alt=""><span><strong>NextLeap Top Fellow</strong><small>Product Management Fellowship · View portfolio ↗</small></span></a><div class="hero-actions"><a href="#work" class="button primary">Explore my work <span>↓</span></a><a class="text-link" href="https://assets.nextleap.app/user-resume/Shaik_SameerPM_Resume_-c320c916-a3c2-48ff-a138-214b5823dcee.pdf" target="_blank" rel="noopener noreferrer">View résumé <span>↗</span></a></div><div class="hero-footnote"><span class="handdrawn">Start with the signal.</span><span>Customer-facing roots.<br>Product-minded by practice.</span></div></div>
+<main id="main"><section class="hero wrap" id="portfolio"><div class="hero-copy"><div class="eyebrow hero-location"><span class="status-dot"></span><span>Bengaluru, India: The missing piece in your product team.</span></div><h1>Good products.<br>Better questions.<br><em>Human outcomes.</em></h1><p class="intro">I’m Sameer. I turn customer friction into product questions. I explore answers through research, prototypes, and applied AI.</p><a class="fellow-recognition" href="https://nextleap.app/portfolio/sameer-_shaik" target="_blank" rel="noopener noreferrer"><img src="dist/assets/nextleap-top-fellow.svg" width="52" height="52" alt=""><span><strong>NextLeap Top Fellow</strong><small>Product Management Fellowship · View portfolio ↗</small></span></a><div class="hero-actions"><a href="#work" class="button primary">Explore my work <span>↓</span></a><a class="text-link" href="https://assets.nextleap.app/user-resume/Shaik_SameerPM_Resume_-c320c916-a3c2-48ff-a138-214b5823dcee.pdf" target="_blank" rel="noopener noreferrer">View résumé <span>↗</span></a></div><div class="hero-footnote"><span class="handdrawn">Start with the signal.</span><span>Customer-facing roots.<br>Product-minded by practice.</span><button class="world-replay" data-show-world>Meet the human ↖</button></div></div>
 <div class="signal-art" aria-label="Interactive product thinking illustration"><div class="art-top"><span>THE PRODUCT COMPASS</span><span>01 / 03</span></div><div class="orbit-scene"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="orbit-label label-user">THE HUMAN</div><div class="orbit-label label-why">THE WHY</div><div class="orbit-label label-value">THE VALUE</div><div class="center-compass"><svg viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor"><circle cx="100" cy="100" r="79" stroke-width=".6"/><circle cx="100" cy="100" r="65" stroke-dasharray="1 6" stroke-width="5"/><path d="M100 9v19m0 144v19M9 100h19m144 0h19"/></g><g class="needle"><path d="M100 39l24 85-24-12-24 12z" fill="var(--accent)"/><path d="M100 161l-24-37 24-12 24 12z" fill="var(--ink)"/></g><circle cx="100" cy="100" r="6" fill="var(--paper)"/></svg></div><div class="signal-note"><span class="note-num">↳</span><span id="signal-text">Listen to the problem<br>behind the ticket.</span></div><span class="art-spark spark-one">✳</span><span class="art-spark spark-two">+</span></div><div class="art-controls" role="group" aria-label="Explore my product approach"><button class="active" data-signal="0" aria-pressed="true"><span>01</span> Listen</button><button data-signal="1" aria-pressed="false"><span>02</span> Question</button><button data-signal="2" aria-pressed="false"><span>03</span> Build</button></div><div class="art-bottom"><span>A LITTLE CURIOSITY. A LOT OF INTENT.</span><span>↗</span></div></div></section>
 <div class="credibility wrap"><span class="cred-label">A PERSPECTIVE<br>BUILT ACROSS</span><span class="company">Tekion<span>Enterprise SaaS · Application support</span></span><span class="company">Citrix<span>Licensing · Customer escalations</span></span><span class="company">Intellipaat<span>Sales · Customer conversations</span></span><span class="company fellowship">NextLeap<span>Product Management · Top Fellow</span></span></div>
 <section class="proof-section wrap" aria-label="Professional impact in numbers"><div class="proof-intro"><span class="eyebrow">THE SIGNAL / IN NUMBERS</span><h2>Close to customers.<br><em>Useful at scale.</em></h2></div><div class="proof-stat"><strong>14,000<span>+</span></strong><h3>Customer interactions</h3><p>Across Tekion and Citrix, understanding friction, investigating issues, and helping customers move forward.</p><span class="proof-scope">CUSTOMER-FACING EXPERIENCE</span></div><div class="proof-stat"><strong>97<span>%</span></strong><h3>Customer satisfaction</h3><p>Across more than 2,500 CSAT responses.</p><span class="proof-scope">PROFESSIONAL PERFORMANCE</span></div><div class="proof-stat"><strong>150<span>+</span></strong><h3>Internal-agent users</h3><p>Using the internal agents I built at Tekion across multiple modules.</p><span class="proof-scope">APPLIED AI / INTERNAL WORKFLOWS</span></div></section><section class="work-section wrap" id="work"><div class="section-head"><div><div class="eyebrow">01 / SELECTED WORK</div><h2>From <em>“what if”</em><br>to something you can try.</h2></div><p>Two deep dives into trust, behavior,<br>and the decisions that shape a product.</p></div>
@@ -114,9 +223,6 @@ try{if(localStorage.getItem('sameer-theme-v2')==='light')document.body.classList
 let toastTimer;function toast(text){$('#toast').textContent=text;$('#toast').classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2800)}$('#copy-email').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('sameerrosk358@gmail.com');toast('Email copied. Let’s talk.')}catch{toast('Email: sameerrosk358@gmail.com')}});
 $('#year').textContent=new Date().getFullYear();let scrollPending=false;addEventListener('scroll',()=>{if(scrollPending)return;scrollPending=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;$('.scroll-progress').style.width=(max>0?scrollY/max*100:0)+'%';scrollPending=false})},{passive:true});
 
-// Gentle entrance motion, only when the visitor permits it.
-if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('js-motion');const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('pending');observer.unobserve(entry.target)}})},{threshold:.07});$$('.featured,.lab-card,.enterprise-note,.about-left,.about-right').forEach(el=>{el.classList.add('reveal','pending');observer.observe(el)})}
-
 const capabilities=[
 {title:'Understand the behavior, then define the problem.',desc:'Attune gave me a way to practise segmentation, interview synthesis, problem framing, and comparing solution directions.',chips:['User interviews','Segmentation','Problem framing','Prioritization'],tools:'Research synthesis · Journey mapping · Prototype iteration',proof:'Explore Attune',case:'attune'},
 {title:'Make the AI decision understandable.',desc:'CompassLoop explores intent, capability choice, and the trust gap before an agent runs. At Tekion, I built eight internal agents across modules, with more than 150 users across this work, including a trusted agent supporting leadership workflows.',chips:['AI workflows','Evaluation thinking','Human oversight','Trust & trade-offs'],tools:'Google AI Studio · n8n · Lovable · AI agents',proof:'Explore CompassLoop',case:'compass'},
@@ -135,5 +241,221 @@ function renderJourney(i){const c=career[i];$('#journey-panel').innerHTML=`<span
 $$('[data-journey]').forEach(b=>b.addEventListener('click',()=>renderJourney(Number(b.dataset.journey))));renderJourney(0);
 function wireArrowTabs(selector,key,render){$$(selector).forEach(b=>b.addEventListener('keydown',e=>{let i=Number(b.dataset[key]);if(['ArrowRight','ArrowDown'].includes(e.key))i=(i+1)%4;else if(['ArrowLeft','ArrowUp'].includes(e.key))i=(i+3)%4;else if(e.key==='Home')i=0;else if(e.key==='End')i=3;else return;e.preventDefault();render(i);$$(selector)[i].focus()}));}
 wireArrowTabs('[data-skill]','skill',renderSkill);wireArrowTabs('[data-journey]','journey',renderJourney);
+
+/* Motion is an enhancement. The site and all work remain usable without it. */
+(() => {
+  'use strict';
+  const root = document.documentElement;
+  const body = document.body;
+  const intro = document.getElementById('welcome');
+  const scene = document.querySelector('[data-world-scene]');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+  const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+  const motionButtons = [...document.querySelectorAll('[data-toggle-motion]')];
+  const statJobs = new Map();
+  let userPaused = false;
+  let transitionTimer;
+  let transitionBusy = false;
+  let entranceTimer;
+  let pointerFrame = 0;
+  try { userPaused = localStorage.getItem('sameer-motion-v1') === 'off'; } catch {}
+  const motionAllowed = () => !reduced.matches && !userPaused;
+
+  function finishCounters() {
+    statJobs.forEach((job, el) => {
+      cancelAnimationFrame(job.frame);
+      el.firstChild.nodeValue = job.target.toLocaleString('en-US');
+    });
+    statJobs.clear();
+  }
+  function applyMotionPreference() {
+    const paused = !motionAllowed();
+    root.classList.toggle('motion-paused', paused);
+    motionButtons.forEach(button => {
+      button.setAttribute('aria-pressed', String(paused));
+      button.setAttribute('aria-label', reduced.matches ? 'Motion reduced by your device preference' : paused ? 'Resume decorative motion' : 'Pause decorative motion');
+      button.disabled = reduced.matches;
+      if (button.classList.contains('world-motion')) {
+        button.innerHTML = `${paused ? '▷' : 'Ⅱ'} <span>${reduced.matches ? 'Reduced motion' : paused ? 'Resume motion' : 'Pause motion'}</span>`;
+      } else {
+        button.innerHTML = `<span class="motion-switch-icon">${paused ? '▷' : 'Ⅱ'}</span><span class="motion-switch-label">${reduced.matches ? 'Reduced motion' : paused ? 'Motion off' : 'Motion on'}</span>`;
+      }
+    });
+    if (paused) {
+      finishCounters();
+      scene.style.setProperty('--wx', 0);
+      scene.style.setProperty('--wy', 0);
+      document.querySelectorAll('[data-motion-tilt]').forEach(el => el.style.removeProperty('transform'));
+    }
+  }
+  motionButtons.forEach(button => button.addEventListener('click', () => {
+    userPaused = !userPaused;
+    try { localStorage.setItem('sameer-motion-v1', userPaused ? 'off' : 'on'); } catch {}
+    applyMotionPreference();
+  }));
+  reduced.addEventListener('change', applyMotionPreference);
+  applyMotionPreference();
+
+  const stories = {
+    gym: { label: '01 / GYM & DISCIPLINE', copy: 'Some days it’s a great session. Some days it’s just showing up. Both count. That consistency comes with me to work.', gym: true },
+    sports: { label: '02 / SPORTS & SPIRIT', copy: 'The timing of a shot. The energy of a team. The belief that the next ball can change the game. That’s my kind of sport.', gym: false },
+    fun: { label: '03 / FUN & GOOD COMPANY', copy: 'Good laughs, a little friendly banter, and people who make the ordinary memorable. Serious about the work. Room for the fun.', gym: true },
+    grit: { label: '04 / DEDICATION & GRIT', copy: 'I don’t need every attempt to be perfect. I need to learn, show up again, and make the next one better. Giving up isn’t the plan.', gym: false }
+  };
+  const traitButtons = [...document.querySelectorAll('[data-world-trait]')];
+  traitButtons.forEach(button => button.addEventListener('click', () => {
+    const story = stories[button.dataset.worldTrait];
+    traitButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+    const portraitName = { gym: 'showup', sports: 'work', fun: 'gym', grit: 'grit' }[button.dataset.worldTrait];
+    scene.dataset.portrait = portraitName;
+    scene.querySelectorAll('.world-portrait').forEach(image => image.setAttribute('aria-hidden', String(!image.classList.contains('world-portrait-' + portraitName))));
+    document.getElementById('world-story-label').textContent = story.label;
+    document.getElementById('world-story-copy').textContent = story.copy;
+    const storyBox = document.querySelector('.world-story');
+    storyBox.classList.remove('is-changing');
+    if (motionAllowed()) requestAnimationFrame(() => storyBox.classList.add('is-changing'));
+  }));
+
+  function focusTarget(target) {
+    const section = document.getElementById(target) || document.getElementById('portfolio');
+    const heading = section.querySelector('h1,h2') || section;
+    heading.setAttribute('tabindex', '-1');
+    section.scrollIntoView({ behavior: 'instant', block: 'start' });
+    heading.focus({ preventScroll: true });
+  }
+  function showPortfolio(target = 'portfolio', animate = true) {
+    if (transitionBusy) return;
+    transitionBusy = true;
+    const duration = animate && motionAllowed() ? 540 : 0;
+    if (duration) body.classList.add('world-leaving');
+    clearTimeout(transitionTimer);
+    transitionTimer = setTimeout(() => {
+      intro.hidden = true;
+      body.classList.remove('welcome-active');
+      body.classList.add('portfolio-entering');
+      history.replaceState(null, '', '#' + target);
+      focusTarget(target);
+      transitionBusy = false;
+      clearTimeout(entranceTimer);
+      entranceTimer = setTimeout(() => {
+        body.classList.remove('portfolio-entering', 'world-leaving');
+      }, duration ? 500 : 0);
+    }, duration);
+  }
+  document.querySelectorAll('[data-enter-world]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    showPortfolio(link.dataset.enterWorld);
+  }));
+  function showWorld() {
+    clearTimeout(transitionTimer);
+    clearTimeout(entranceTimer);
+    transitionBusy = false;
+    intro.hidden = false;
+    body.classList.add('welcome-active');
+    body.classList.remove('world-leaving', 'portfolio-entering');
+    history.replaceState(null, '', '#welcome');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    const title = document.getElementById('world-title');
+    title.setAttribute('tabindex', '-1');
+    title.focus({ preventScroll: true });
+  }
+  document.querySelectorAll('[data-show-world]').forEach(button => button.addEventListener('click', showWorld));
+  const initialTarget = location.hash.slice(1);
+  if (initialTarget && initialTarget !== 'welcome' && document.getElementById(initialTarget)) {
+    intro.hidden = true;
+    requestAnimationFrame(() => focusTarget(initialTarget));
+  } else {
+    body.classList.add('welcome-active');
+  }
+  window.addEventListener('hashchange', () => {
+    const target = location.hash.slice(1);
+    if (target === 'welcome') showWorld();
+    else if (body.classList.contains('welcome-active') && target && document.getElementById(target)) showPortfolio(target, false);
+  });
+
+  if ('IntersectionObserver' in window) {
+    root.classList.add('motion-ready');
+    const reveals = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        reveals.unobserve(entry.target);
+      });
+    }, { threshold: .09, rootMargin: '0px 0px -15px 0px' });
+    const revealTargets = document.querySelectorAll('.section-head,.featured,.lab-card,.enterprise-note,.skill-workbench,.journey-layout,.about-left,.about-right,.rohit-interlude,.kohli-interlude,.anime-art,.anime-lessons,.team-section,.contact-grid,.proof-intro,.proof-stat');
+    revealTargets.forEach((el, i) => {
+      el.classList.add('motion-reveal');
+      el.style.setProperty('--reveal-delay', `${el.classList.contains('proof-stat') ? (i % 3) * 75 : 0}ms`);
+      reveals.observe(el);
+    });
+    const metrics = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      metrics.unobserve(el);
+      const target = Number(el.firstChild.nodeValue.replace(/[^0-9]/g, ''));
+      if (!motionAllowed() || !target) return;
+      el.setAttribute('aria-label', el.textContent);
+      const start = performance.now();
+      const job = { target, frame: 0 };
+      statJobs.set(el, job);
+      function tick(now) {
+        const progress = Math.min((now - start) / 1050, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.firstChild.nodeValue = Math.round(target * ease).toLocaleString('en-US');
+        if (progress < 1 && motionAllowed() && !document.hidden) job.frame = requestAnimationFrame(tick);
+        else {
+          el.firstChild.nodeValue = target.toLocaleString('en-US');
+          statJobs.delete(el);
+        }
+      }
+      job.frame = requestAnimationFrame(tick);
+    }), { threshold: .7 });
+    document.querySelectorAll('.proof-stat>strong').forEach(el => metrics.observe(el));
+    const navLinks = [...document.querySelectorAll('.header nav a,.mobile-dock a')];
+    const navObserver = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (!visible.length) return;
+      const id = visible[0].target.id;
+      navLinks.forEach(a => a.classList.toggle('is-current', a.hash === '#' + id));
+    }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
+    document.querySelectorAll('#work,#skills,#journey,#lab,#contact').forEach(el => navObserver.observe(el));
+  }
+
+  scene.addEventListener('pointermove', event => {
+    if (!finePointer.matches || !motionAllowed()) return;
+    cancelAnimationFrame(pointerFrame);
+    pointerFrame = requestAnimationFrame(() => {
+      const rect = scene.getBoundingClientRect();
+      scene.style.setProperty('--wx', ((event.clientX - rect.left) / rect.width - .5) * 2);
+      scene.style.setProperty('--wy', ((event.clientY - rect.top) / rect.height - .5) * 2);
+    });
+  });
+  scene.addEventListener('pointerleave', () => {
+    cancelAnimationFrame(pointerFrame);
+    scene.style.setProperty('--wx', 0);
+    scene.style.setProperty('--wy', 0);
+  });
+  document.querySelectorAll('.lab-card,.signal-art').forEach(card => {
+    card.dataset.motionTilt = '';
+    let frame = 0;
+    card.addEventListener('pointermove', event => {
+      if (!finePointer.matches || !motionAllowed() || card.classList.contains('motion-reveal') && !card.classList.contains('is-visible')) return;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const r = card.getBoundingClientRect();
+        const x = ((event.clientX - r.left) / r.width - .5) * 4;
+        const y = ((event.clientY - r.top) / r.height - .5) * -4;
+        card.style.transform = `perspective(1000px) rotateX(${y}deg) rotateY(${x}deg) translateY(-3px)`;
+      });
+    });
+    card.addEventListener('pointerleave', () => {
+      cancelAnimationFrame(frame);
+      card.style.removeProperty('transform');
+    });
+  });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) finishCounters();
+  });
+})();
 
 </script></body></html>
