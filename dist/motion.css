@@ -116,4 +116,71 @@
 .motion-paused :is(.rohit-photo,.kohli-photo,.team-photo,.anime-art):after,.motion-paused :is(.rohit-photo,.kohli-photo,.team-photo,.anime-art) img{animation:none!important;will-change:auto}
 @media(prefers-reduced-motion:reduce){:is(.rohit-photo,.kohli-photo,.team-photo,.anime-art):after,:is(.rohit-photo,.kohli-photo,.team-photo,.anime-art) img{animation:none!important;will-change:auto}.skill-tabs button,.journey-track button{transition:none}.skill-tabs button:active,.journey-track button:active,.world-traits>button:active{transform:none}}
 
+/* A quieter daylight palette and an open, editorial career story. */
+body.light{--paper:#f6f5f0;--ink:#243a33;--muted:#586b62;--line:#ced6cc;--accent:#355e48;--accent-light:#e0e9d8;--surface:#ecefe7;--white:#fffef9;--cyan:#386e67;color-scheme:light}
+body:not(.light){color-scheme:dark}
+.header{max-width:none;width:100%;padding-inline:max(24px,calc((100vw - 1332px)/2));background:#0a1018f2;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.header nav{background:transparent;border:0;padding-block:0;box-shadow:none}
+.header .nav-contact,.header .nav-contact:hover,.header nav a.nav-contact.is-current{color:#182820}
+body.light .header{background:#f6f5f0f2}
+body.light .header .nav-contact,body.light .header .nav-contact:hover,body.light .header nav a.nav-contact.is-current{background:#355e48;color:#fffef5}
+body.light .primary{background:#355e48;color:#fffef5;box-shadow:none}
+body.light .primary:hover{background:#284c39;color:#fffef5}
+body.light .hero:before{opacity:.4}
+body.light .motion-switch{background:#fffef9ed;color:#355447;border-color:#c4cec1;box-shadow:0 4px 18px #253a3210}
+body.light .mobile-dock{background:#fffef9f2;border-color:#c4cec1;box-shadow:0 5px 25px #253a3214}
+body.light .mobile-dock a{color:#52675a}
+body.light .mobile-dock a.is-current:not(:last-child){color:#284c39}
+body.light .mobile-dock a:last-child{background:#355e48;color:#fffef5}
+body.light .skill-tabs button.active{background:#e6ece0;box-shadow:inset 0 0 0 1px #c6d2bf}
+body.light #skill-panel{box-shadow:none;background:#fffef9}
+body.light .lab-card:hover{box-shadow:0 12px 28px #344c4012}
+body.light .closing-studio{background:radial-gradient(ellipse at 0% 100%,#c9d6c27a,transparent 65%),#e5ebdf;color:#243e32;border-top-color:#c7d1c2}
+body.light .closing-studio h2{color:#243e32}
+body.light .closing-studio h2 em{color:#63764e}
+body.light .closing-studio .contact-lead>p{color:#526957}
+body.light .closing-studio .eyebrow{color:#526957}
+body.light .closing-studio .status-dot{background:#577343}
+body.light .closing-studio .contact-cta{background:#355e48;color:#fffef5}
+body.light .closing-puzzle{color:#607953}
+body.light .closing-puzzle svg{stroke:#6c8059}
+body.light .closing-marquee{color:#63774f;border-color:#b8c6af}
+body.light .closing-marquee-track i{color:#986d4e}
+body.light .closing-postcard{box-shadow:10px 12px 0 #4c665309,0 18px 45px #334d3b12;border-color:#d6d8c6}
+
+.journey-section{padding-top:35px;padding-bottom:85px}
+.journey-layout{grid-template-columns:minmax(210px,.7fr) minmax(0,1.6fr);gap:clamp(40px,6vw,88px);align-items:start}
+.journey-track{display:flex;flex-direction:column;border:0;gap:0;position:sticky;top:133px}
+.journey-track button,.journey-track button.active,.journey-track button:hover{position:relative;padding:22px 0 23px 20px;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;box-shadow:none;text-align:left;transform:none}
+.journey-track button:first-child{padding-top:0}
+.journey-track button:before{content:'';position:absolute;left:0;top:24px;bottom:26px;width:2px;background:var(--accent);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--motion-ease)}
+.journey-track button:first-child:before{top:3px}
+.journey-track button.active:before{transform:scaleY(1)}
+.journey-track button:not(.active) .journey-company{color:var(--muted)}
+.journey-track button:hover .journey-company{color:var(--ink)}
+.journey-track button.active .journey-company{color:var(--ink)}
+.journey-date{font-size:8px;letter-spacing:1px;line-height:1.7}
+.journey-company{font-family:var(--sans);font-size:29px;font-weight:500;letter-spacing:-1.1px;padding-right:0;margin:7px 0;transition:color .3s}
+.journey-company i{font-size:21px;opacity:0;transform:translate(-6px,6px)}
+.journey-track button.active .journey-company i,.journey-track button:hover .journey-company i{opacity:1;transform:translate(0,0);color:var(--accent)}
+.journey-track small{font-size:10px;line-height:1.7;max-width:240px}
+#journey-panel{border:0;border-radius:0;background:none;box-shadow:none;overflow:visible;padding:0 0 0 0;min-width:0}
+#journey-panel:before{display:none}
+.career-chapter{display:flex;align-items:center;justify-content:space-between;gap:16px;border-top:1px solid var(--line);padding-top:17px;margin-bottom:28px;font-size:9px;letter-spacing:1.5px;color:var(--muted)}
+.career-chapter>span:last-child{font-family:var(--serif);font-size:22px;font-style:italic;letter-spacing:0;color:var(--accent)}
+#journey-panel .panel-overline{font-size:8px;letter-spacing:1.4px}
+#journey-panel .panel-overline:before{display:none}
+.career-question{font-size:clamp(23px,2.4vw,31px);color:var(--muted);font-style:italic;margin:22px 0 19px;max-width:600px}
+#journey-panel h3{font-family:var(--sans);font-size:clamp(29px,3vw,40px);font-weight:500;letter-spacing:-1.4px;line-height:1.16;margin:0;max-width:650px;text-wrap:balance}
+#journey-panel>p{font-size:14px;line-height:1.9;margin-top:24px;max-width:640px}
+#journey-panel ul{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin:30px 0 28px;padding-top:25px;border-top:1px solid var(--line);counter-reset:career-evidence}
+#journey-panel li{padding:0 0 0 23px;margin:0;font-size:12px;line-height:1.8;counter-increment:career-evidence}
+#journey-panel li:before{content:counter(career-evidence,decimal-leading-zero);top:2px;font-size:8px;font-variant-numeric:tabular-nums;letter-spacing:.3px;color:var(--accent)}
+#journey-panel .career-lesson{padding:20px 0 0!important;background:none;border:0;border-top:1px solid var(--line);border-radius:0;font-family:var(--serif);font-size:23px;line-height:1.35;color:var(--ink)}
+#journey-panel .fellow-career{border:0;border-radius:0;padding:0;margin:24px 0;background:none;box-shadow:none}
+@media(max-width:950px){.journey-layout{grid-template-columns:minmax(190px,.75fr) minmax(0,1.5fr);gap:35px}#journey-panel ul{grid-template-columns:1fr;gap:15px}}
+@media(max-width:760px){.header{padding-inline:24px}.journey-section{padding-top:15px;padding-bottom:55px}.journey-layout{grid-template-columns:1fr;gap:31px}.journey-track{position:static;display:grid;grid-template-columns:1fr 1fr;column-gap:24px;row-gap:0}.journey-track button,.journey-track button.active,.journey-track button:hover{padding:18px 0 19px 13px}.journey-track button:first-child{padding-top:18px}.journey-track button:before,.journey-track button:first-child:before{top:21px;bottom:22px}.journey-date{font-size:7px;letter-spacing:.6px}.journey-company{font-size:26px;margin:6px 0}.journey-track small{font-size:10px}.journey-company i{font-size:17px}#journey-panel{padding:0}.career-chapter{margin-bottom:24px;font-size:8px}.career-question{font-size:26px;margin-top:18px}#journey-panel h3{font-size:32px;letter-spacing:-1.1px}#journey-panel>p{font-size:14px}#journey-panel li{font-size:13px}#journey-panel .career-lesson{font-size:24px}.career-chapter>span:last-child{font-size:21px}}
+@media(max-width:450px){.header{padding-inline:16px}.journey-track{column-gap:18px}.journey-company{font-size:23px;letter-spacing:-.8px}.journey-date{font-size:6px}.journey-track small{font-size:9px}.journey-company i{font-size:15px}#journey-panel h3{font-size:29px}.career-question{font-size:24px}#journey-panel .career-lesson{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.journey-track button:before{transition:none}}
+
 @media(min-width:761px) and (max-height:800px){.world-traits>button{padding-top:12px;padding-bottom:12px}.world-story{min-height:42px;padding-top:12px}.world-enter{padding-top:17px}}
