@@ -25,7 +25,7 @@ function labVisual(p,index){
   '<div class="mini-moneyball"><span>LOOK BEYOND THE OBVIOUS.</span><div class="money-bars"><i></i><i></i><i></i><i></i><i></i></div><b>A different lens on value.</b></div>',
   '<div class="mini-voice smart"><span>FROM A THOUGHT TO A CONVERSATION.</span><div class="voice-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>Speak. Explore. Build.</b></div>'
  ];
- return `<span class="lab-preview-index">${String(index+1).padStart(2,'0')} / EXPLORATION</span>${previews[index]}<span class="lab-preview-label">ILLUSTRATIVE PREVIEW</span>`;
+ return `<span class="lab-preview-index">${String(index+1).padStart(2,'0')} / EXPLORATION</span><div class="lab-preview-canvas">${previews[index]}</div><span class="lab-preview-label">ILLUSTRATIVE PREVIEW</span>`;
 }
 
 $('#lab-grid').innerHTML=labProjects.map((p,index)=>`<article class="lab-card" data-type="${p.type}"><div class="lab-art ${p.tone}" aria-hidden="true">${labVisual(p,index)}</div><div class="lab-card-body"><span class="lab-type">${p.kind}</span><h3>${p.title}</h3><p>${p.desc}</p><div class="lab-links">${p.links.map(([label,url])=>`<a target="_blank" rel="noopener noreferrer" href="${url}">${label} ↗</a>`).join('')}</div></div></article>`).join('');
