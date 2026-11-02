@@ -183,4 +183,61 @@ body.light .closing-postcard{box-shadow:10px 12px 0 #4c665309,0 18px 45px #334d3
 @media(max-width:450px){.header{padding-inline:16px}.journey-track{column-gap:18px}.journey-company{font-size:23px;letter-spacing:-.8px}.journey-date{font-size:6px}.journey-track small{font-size:9px}.journey-company i{font-size:15px}#journey-panel h3{font-size:29px}.career-question{font-size:24px}#journey-panel .career-lesson{font-size:22px}}
 @media(prefers-reduced-motion:reduce){.journey-track button:before{transition:none}}
 
+/* Readable at normal zoom: supporting copy is part of the story, too. */
+.world-intro{background:#f8f8ef;color:#253f35}
+.world-grid{background:radial-gradient(ellipse at 9% 10%,#f2d9cba6,transparent 48%),radial-gradient(ellipse at 85% 36%,#cde5d8b3,transparent 53%),linear-gradient(135deg,#fffaf2,#f5f7ed 72%,#eee9da)}
+.world-stage:before{background:linear-gradient(140deg,#bcd9c3a1,#e1ead870 65%,#f3debc75);border-color:#73977c40}
+.world-signature small{font-size:11px;font-weight:600;letter-spacing:1px;line-height:1.65;color:#455f50}
+.world-kicker{font-size:13px;font-weight:600;letter-spacing:2.8px;color:#425e4e}
+.world-motion,.world-motion>span,.world-skip{font-size:13px;font-weight:600;color:#3e5949}
+.world-micro,.world-coordinate{font-size:11px;font-weight:600;letter-spacing:.7px;color:#53684e}
+.world-side-copy>p{font-weight:600;color:#2f4b3d}
+.world-postcard{width:225px;padding:22px;background:#efd1b7;box-shadow:7px 10px 0 #b4987212,0 16px 30px #7865480a}
+.world-postcard>span{font-size:10px;font-weight:700;letter-spacing:1px;color:#674d38}
+.world-postcard small{font-size:12px;line-height:1.6;color:#66533e}
+.world-person figcaption{font-size:10px;font-weight:600;letter-spacing:.8px;padding:10px 13px}
+.world-seal>span{font-size:9px;font-weight:600;letter-spacing:.7px}
+.world-seal>span:last-child{font-size:7px;font-weight:600;letter-spacing:0}
+.world-trait-num,.world-trait-small{font-size:11px;font-weight:600;letter-spacing:.6px;line-height:1.6;color:#53684e}
+.world-traits>button{padding-block:19px}
+.world-trait-name{font-size:23px;font-weight:600}
+.world-story{gap:28px;padding-top:21px;min-height:74px}
+.world-story>span{font-size:11px;font-weight:700;letter-spacing:.7px;flex-basis:165px;max-width:165px;line-height:1.65;color:#53684e}
+.world-story>p{font-size:15px;font-weight:500;color:#435e49;line-height:1.7;max-width:800px}
+.world-enter{padding-top:22px;padding-bottom:10px}
+.world-enter>p{font-size:14px;color:#526951}
+.world-enter>p>strong{font-size:20px;line-height:1.6;color:#294b39}
+.world-entry-note{font-size:10px;font-weight:600;letter-spacing:.7px;color:#53684e}
+.world-bottom{max-width:1400px}
+.chapter-wipe>span{font-size:13px}
+
+.header nav{font-size:14px;gap:25px}.brand-sub,.header .brand-sub{font-size:10px;letter-spacing:1.4px;font-weight:600}
+.button,.text-link,.project-actions .button,.project-actions .text-link,.hero-actions .button,.hero-actions .text-link{font-size:14px}
+.eyebrow,.hero .eyebrow,.hero .hero-location,.section-head .eyebrow,.proof-intro .eyebrow,.action-reflection .eyebrow,.kohli-copy .eyebrow,.team-copy .eyebrow,.anime-lessons .eyebrow,.contact-section .eyebrow{font-size:11px;line-height:1.7;letter-spacing:1.4px;font-weight:600}
+.hero-footnote,.world-replay{font-size:12px;line-height:1.8}
+.intro,.section-head>p,.project-detail>p,.enterprise-grid>div>p,.enterprise-note p,.about-left p,.offclock p,.action-reflection>p,.kohli-copy>p,.team-copy>p,.anime-lessons p,.contact-lead>p,#skill-panel>p,.case-deck,.case-panel p,.case-panel li,.case-callout{font-size:15px;line-height:1.85}
+.cred-label,.company span,.note-label,.enterprise-note .small,.principle-label,.overline,.panel-overline,.tool-row>span,.proof-scope,.tags span,.project-facts span,.project-disclaimer,.visual-caption,.concept-caption,.photo-label,.kohli-photo figcaption,.team-photo>span,.lab-type,.lab-count,.case-kicker,.case-evidence,.lab-preview-label,.lab-preview-index{font-size:11px;line-height:1.65;font-weight:600;letter-spacing:.7px}
+.proof-stat h3{font-size:15px;font-weight:600}.proof-stat p{font-size:14px;line-height:1.85}
+.filters button,.filters button span,.lab-links a,.lab-links button,.lab-gallery-heading,.lab-position,.skill-tabs button,.tool-row p,#skill-panel>.text-link,summary,details p,.contact-card>a:not(.email){font-size:14px}
+.skill-tabs button>span,.skill-chips span{font-size:12px}.skill-chips span{padding:7px 11px}.skill-tabs button{line-height:1.6}
+.lab-card p{font-size:15px}.lab-card-body{min-height:300px}
+.journey-date{font-size:11px;font-weight:600;letter-spacing:.65px}.journey-track small{font-size:12px;line-height:1.8}
+.career-chapter{font-size:11px}#journey-panel .panel-overline{font-size:11px}#journey-panel>p{font-size:15px}#journey-panel li{font-size:14px}#journey-panel li:before{font-size:10px}
+.fellow-recognition strong{font-size:15px}.fellow-recognition small,.fellow-proof{font-size:12px}.fellow-career strong{font-size:17px}
+.closing-puzzle>span{font-size:11px;letter-spacing:.8px;color:#b7c8a5}.closing-puzzle svg{flex-shrink:0}
+.postcard-heading>span:first-child{font-size:11px;font-weight:600;letter-spacing:1px;color:#56654c;line-height:1.7;max-width:200px}
+.postcard-label{font-size:11px;font-weight:700;letter-spacing:.8px;color:#56654c}
+.closing-postcard .email{font-size:17px;overflow-wrap:anywhere}
+.closing-postcard>button{font-size:14px;font-weight:600;min-height:44px;color:#526348;padding-block:8px}
+.closing-postcard>a:not(.email){font-size:14px;color:#526348;padding-block:13px}
+.postcard-signoff>small{font-size:10px;letter-spacing:.7px;color:#626e54}
+.postcard-stamp>small{font-size:6px;font-weight:700}
+.motion-switch{font-size:12px;color:#d3e1e2;padding:10px 14px}.motion-switch-icon{font-size:13px}
+footer{font-size:12px;line-height:1.8}.dialog-top,.dialog-top>span,.dialog-top button,.case-tabs button{font-size:12px}
+.mobile-dock a{font-size:12px}.art-badge{font-size:11px;letter-spacing:.6px}
+@media(max-width:1100px){.header nav{gap:17px}.header .brand-sub{font-size:9px}.world-postcard{width:210px}.world-side-copy{left:0}.world-postcard{right:0}.world-seal{right:18%}}
+@media(max-width:760px){.world-signature small{font-size:10px}.world-kicker{font-size:12px;letter-spacing:1.7px}.world-top-actions{gap:13px}.world-motion,.world-motion>span,.world-skip{font-size:12px}.world-micro{font-size:10px}.world-coordinate{display:none}.world-person figcaption{font-size:9px}.world-trait-name{font-size:23px}.world-trait-num,.world-trait-small{font-size:10px}.world-story{display:block;padding-top:19px}.world-story>span{display:block;max-width:none;line-height:1.6}.world-story>p{font-size:14px;margin-top:8px}.world-enter>p{font-size:13px}.world-enter>p>strong{font-size:18px}.world-entry-note{display:none}.world-enter{gap:18px}.world-postcard>span{font-size:9px}.world-postcard small{font-size:11px}.world-postcard{width:170px;padding:17px}.header .nav-contact{font-size:13px}.header .brand-sub{font-size:9px;letter-spacing:1px}.proof-intro h2 br{display:block}.proof-intro{display:block}.proof-intro h2{margin-top:12px}.proof-stat h3{font-size:14px}.proof-stat p{font-size:14px}.proof-scope{font-size:10px}.section-head .eyebrow{font-size:11px}.lab-card-body{min-height:300px}.journey-date{font-size:10px}.journey-track small{font-size:12px}.postcard-heading>span:first-child{font-size:10px;max-width:190px}.postcard-message{margin-top:18px!important}.closing-postcard .email{font-size:16px}.postcard-signoff>small{font-size:9px}.closing-puzzle>span{font-size:10px}.mobile-dock a{font-size:12px}.dialog-top>span{font-size:10px}}
+@media(max-width:450px){.world-signature{gap:10px}.world-signature small{font-size:9px;letter-spacing:.6px}.world-top-actions{gap:10px}.world-motion{padding:6px 0}.world-motion>span{font-size:11px}.world-skip{font-size:12px;gap:10px}.world-kicker{font-size:11px;letter-spacing:1.3px}.world-side-copy .world-micro{display:none}.world-side-copy>p{font-size:18px}.world-postcard{width:138px;padding:13px;right:-3px}.world-postcard strong{font-size:25px}.world-postcard>span{font-size:8px;letter-spacing:.5px}.world-postcard small{font-size:10px;margin-top:9px}.world-person figcaption{font-size:8px;letter-spacing:.3px;padding:8px 10px}.world-trait-num,.world-trait-small{font-size:10px;letter-spacing:.2px}.world-trait-name{font-size:21px;gap:8px}.world-traits>button{padding:17px 12px}.world-story>span{font-size:11px}.world-enter{flex-wrap:wrap;align-items:flex-start}.world-enter>p{font-size:13px}.world-enter>p>strong{font-size:17px}.world-enter-button{min-width:180px;font-size:18px}.header .brand-sub{font-size:8px;letter-spacing:.5px}.hero-actions{flex-wrap:wrap;gap:18px}.hero .hero-location{font-size:12px;letter-spacing:.2px}.skill-tabs button{font-size:13px;padding:13px 10px;gap:8px}.skill-tabs button>span{font-size:10px}.skill-tabs button>i{display:none}.skill-chips span{font-size:12px}.journey-date{font-size:9px;letter-spacing:.3px}.journey-track small{font-size:11px}.proof-stat:last-child{grid-template-columns:85px 1fr}.proof-scope{font-size:10px;letter-spacing:.5px}.filters button{font-size:13px;padding-inline:12px}.lab-count{font-size:11px}.lab-gallery-heading{font-size:12px}.postcard-heading>span:first-child{font-size:10px;max-width:160px}.closing-postcard .email{font-size:15px}.closing-postcard>a:not(.email){font-size:14px}.closing-puzzle>span{font-size:10px}.postcard-signoff>small{font-size:9px}.art-badge{font-size:9px}.motion-switch{font-size:11px;padding:9px 11px}.mobile-dock a{font-size:12px;padding-inline:12px}.case-tabs{gap:16px;overflow-x:auto}.case-tabs button{font-size:12px;white-space:nowrap}}
+@media(max-width:360px){.world-signature small{font-size:8px}.world-top-actions{gap:8px}.world-motion>span{display:none}.world-trait-name{font-size:19px}.world-postcard{width:125px}.world-postcard small{font-size:10px}.header .brand-sub{display:none}.mobile-dock a{padding-inline:10px;font-size:11px}.postcard-signoff{gap:12px}}
+
 @media(min-width:761px) and (max-height:800px){.world-traits>button{padding-top:12px;padding-bottom:12px}.world-story{min-height:42px;padding-top:12px}.world-enter{padding-top:17px}}
