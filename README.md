@@ -21,7 +21,7 @@ Import this repository and use `main` as the production branch. The included `ve
 
 ## Features
 
-An illustrated personal opening in cream, sage and terracotta with four interactive portrait chapters, followed by prototype-inspired CompassLoop and Attune showcases, interactive skills and career sections, case-study dialogs, scoped professional metrics, an illustrated cricket playbook, anime influences, and a contact section. Keyboard navigation, reduced-motion support, mobile quick navigation, and light/dark themes are included.
+An illustrated personal opening in cream, sage and terracotta with four interactive portrait chapters, a swipeable project shelf with arrow and keyboard controls, count-up impact metrics, animated artwork and selection panels, a personal closing postcard, followed by prototype-inspired CompassLoop and Attune showcases, interactive skills and career sections, case-study dialogs, scoped professional metrics, an illustrated cricket playbook, anime influences, and a contact section. Keyboard navigation, reduced-motion support, mobile quick navigation, and light/dark themes are included.
 
 ## Content and evidence
 
@@ -35,4 +35,4 @@ JavaScript syntax, HTML identifiers, local assets and links checked. Browser lay
 
 ## Case-study documents
 
-PDF decks open from the existing public portfolio storage at https://sameer-shaik-product-studio.poeticwand3.chatgpt.site/assets/. They are external document dependencies; the repository versions the site source and artwork. The downloadable project backup includes the PDF originals.
+PDF links open the original public NextLeap submission files. All eleven document URLs returned HTTP 200 with PDF content type during the final check. The downloadable project backup includes local PDF originals.

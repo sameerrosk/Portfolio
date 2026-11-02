@@ -9,6 +9,8 @@
   const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
   const motionButtons = [...document.querySelectorAll('[data-toggle-motion]')];
   const statJobs = new Map();
+  const statTargets = new Map();
+  const panelAnimations = new Map();
   let userPaused = false;
   let transitionTimer;
   let transitionBusy = false;
@@ -39,10 +41,35 @@
     });
     if (paused) {
       finishCounters();
+      panelAnimations.forEach(animation => animation.cancel());
+      panelAnimations.clear();
       scene.style.setProperty('--wx', 0);
       scene.style.setProperty('--wy', 0);
       document.querySelectorAll('[data-motion-tilt]').forEach(el => el.style.removeProperty('transform'));
+    } else {
+      statTargets.forEach((target, el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top >= 0 && rect.bottom <= innerHeight && el.getClientRects().length) countStat(el, target);
+      });
     }
+  }
+  function countStat(el, target) {
+    if (!motionAllowed() || statJobs.has(el)) return;
+    const start = performance.now();
+    const job = { target, frame: 0 };
+    statJobs.set(el, job);
+    function tick(now) {
+      const progress = Math.max(0, Math.min((now - start) / 1900, 1));
+      const ease = 1 - Math.pow(1 - progress, 3);
+      el.firstChild.nodeValue = Math.round(target * ease).toLocaleString('en-US');
+      if (progress < 1 && motionAllowed() && !document.hidden) job.frame = requestAnimationFrame(tick);
+      else {
+        el.firstChild.nodeValue = target.toLocaleString('en-US');
+        statJobs.delete(el);
+      }
+    }
+    el.firstChild.nodeValue = '0';
+    job.frame = requestAnimationFrame(tick);
   }
   motionButtons.forEach(button => button.addEventListener('click', () => {
     userPaused = !userPaused;
@@ -147,26 +174,13 @@
     const metrics = new IntersectionObserver(entries => entries.forEach(entry => {
       if (!entry.isIntersecting) return;
       const el = entry.target;
-      metrics.unobserve(el);
-      const target = Number(el.firstChild.nodeValue.replace(/[^0-9]/g, ''));
-      if (!motionAllowed() || !target) return;
-      el.setAttribute('aria-label', el.textContent);
-      const start = performance.now();
-      const job = { target, frame: 0 };
-      statJobs.set(el, job);
-      function tick(now) {
-        const progress = Math.min((now - start) / 1050, 1);
-        const ease = 1 - Math.pow(1 - progress, 3);
-        el.firstChild.nodeValue = Math.round(target * ease).toLocaleString('en-US');
-        if (progress < 1 && motionAllowed() && !document.hidden) job.frame = requestAnimationFrame(tick);
-        else {
-          el.firstChild.nodeValue = target.toLocaleString('en-US');
-          statJobs.delete(el);
-        }
-      }
-      job.frame = requestAnimationFrame(tick);
+      countStat(el, statTargets.get(el));
     }), { threshold: .7 });
-    document.querySelectorAll('.proof-stat>strong').forEach(el => metrics.observe(el));
+    document.querySelectorAll('.proof-stat>strong').forEach(el => {
+      statTargets.set(el, Number(el.firstChild.nodeValue.replace(/[^0-9]/g, '')));
+      el.setAttribute('aria-label', el.textContent);
+      metrics.observe(el);
+    });
     const navLinks = [...document.querySelectorAll('.header nav a,.mobile-dock a')];
     const navObserver = new IntersectionObserver(entries => {
       const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
@@ -211,5 +225,56 @@
   });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) finishCounters();
+  });
+
+  const rail = document.getElementById('lab-grid');
+  const galleryPrev = document.querySelector('[data-gallery-prev]');
+  const galleryNext = document.querySelector('[data-gallery-next]');
+  const galleryPosition = document.querySelector('.lab-position');
+  let galleryFrame = 0;
+  function updateGallery() {
+    const cards = [...rail.querySelectorAll('.lab-card')].filter(card => !card.hidden);
+    const max = Math.max(0, rail.scrollWidth - rail.clientWidth);
+    galleryPrev.disabled = rail.scrollLeft < 2;
+    galleryNext.disabled = rail.scrollLeft >= max - 2;
+    const index = Math.max(0, cards.findIndex(card => card.offsetLeft + card.offsetWidth / 2 > rail.scrollLeft));
+    galleryPosition.textContent = `${String(index + 1).padStart(2, '0')} / ${String(cards.length).padStart(2, '0')}`;
+    rail.parentElement.style.setProperty('--gallery-progress', `${max ? Math.min(100, (rail.scrollLeft + rail.clientWidth) / rail.scrollWidth * 100) : 100}%`);
+  }
+  function moveGallery(direction) {
+    const card = [...rail.querySelectorAll('.lab-card')].find(card => !card.hidden);
+    if (!card) return;
+    rail.scrollBy({ left: direction * (card.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap)), behavior: motionAllowed() ? 'smooth' : 'instant' });
+  }
+  galleryPrev.addEventListener('click', () => moveGallery(-1));
+  galleryNext.addEventListener('click', () => moveGallery(1));
+  rail.addEventListener('keydown', event => {
+    if (event.target !== rail || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    moveGallery(event.key === 'ArrowRight' ? 1 : -1);
+  });
+  rail.addEventListener('scroll', () => {
+    cancelAnimationFrame(galleryFrame);
+    galleryFrame = requestAnimationFrame(updateGallery);
+  }, { passive: true });
+  document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
+    rail.scrollTo({ left: 0, behavior: 'instant' });
+    requestAnimationFrame(updateGallery);
+  }));
+  window.addEventListener('resize', updateGallery);
+  // The work is initially hidden behind the opening. Refresh sizes when it becomes visible.
+  document.querySelectorAll('[data-enter-world]').forEach(link => link.addEventListener('click', () => setTimeout(updateGallery, motionAllowed() ? 560 : 0)));
+  requestAnimationFrame(updateGallery);
+  window.addEventListener('portfolio:panel-change', event => {
+    if (!motionAllowed()) return;
+    const panel = document.getElementById(event.detail.panel);
+    if (!panel) return;
+    panelAnimations.get(panel)?.cancel();
+    const animation = panel.animate([
+      { opacity: .35, transform: 'translateY(10px) scale(.99)' },
+      { opacity: 1, transform: 'translateY(0) scale(1)' }
+    ], { duration: 480, easing: 'cubic-bezier(.2,.75,.2,1)' });
+    panelAnimations.set(panel, animation);
+    animation.onfinish = () => panelAnimations.delete(panel);
   });
 })();
